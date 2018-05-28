@@ -67,21 +67,7 @@ const SignUpForm = (props) => {
         <Field name="confirm" component={fieldNombre} ph="Confirm password:"/>
         <Button 
           title='Registrar'
-          onPress={props.handleSubmit(props.registro 
-          //   (values)=>{ 
-          //   console.log(values);  
-          //   // autentication.createUserWithEmailAndPassword(values.correo,values.password)
-          //   // .then((success)=>{
-          //   //   alert('Se registro el usuario.');
-          //   //   console.log(success); 
-          //   // })
-          //   // .catch((error)=>{
-          //   //   var errorCode = error.code;
-          //   //   var errorMessage = error.message; 
-          //   //   console.log(error) 
-          //   // })
-          // }
-        )}
+          onPress={props.handleSubmit(props.registro)}
         />  
       </View>
     );

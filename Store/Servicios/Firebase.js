@@ -16,4 +16,5 @@ firebase.initializeApp(config);
 //     var errorMessage = error.message;
 // })
 
-export const autentication = firebase.auth()
+export const autentication = firebase.auth();
+export const dataBase = firebase.database();
