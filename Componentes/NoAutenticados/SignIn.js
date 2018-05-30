@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Text, View, Button, StyleSheet } from 'react-native'
 import {connect} from 'react-redux'
-import SignInForm from './Formas/SignInForm' 
+import SignInForm from './Formas/SignInForm'
+import {actionLogin} from '../../Store/ACTIONS'
 
 class SignIn extends Component {
   inicioDeSesion = (values) =>{
@@ -14,13 +15,13 @@ class SignIn extends Component {
       <View style={styles.container}>
         <SignInForm login={this.inicioDeSesion}/>  
         <Button 
-            title="SignUp"
+            title="SignUp" 
             onPress={()=>{navigation.navigate('SignUp')}}
         />
-      </View>
+      </View> 
     )  
   }
-}     
+}      
 
 const mapStateToProps = state =>{
   return {
@@ -31,7 +32,7 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = dispatch =>{
   return{
     login: (values) =>{
-      dispatch({type:'LOGIN', datos:values})
+      dispatch(actionLogin(values))
     }
   }
 }

@@ -9,6 +9,7 @@ registroFireBase = (values) =>{
         console.log('Desde then ',success);  
         const nombre = values.nombre;
         const correo = values.correo;
+        
         dataBase.ref(`usuarios/${success.user.uid}`) 
         .set({
             nombre,

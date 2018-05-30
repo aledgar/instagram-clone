@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Text, View, Button, StyleSheet } from 'react-native'
 import {connect} from 'react-redux';
 import SignUpForm from './Formas/SignUpForm';
+import {actionRegistro} from '../../Store/ACTIONS';
 
 class SignUp extends Component {
   registroDeUsuario = (values) =>{
@@ -12,7 +13,7 @@ class SignUp extends Component {
     console.log(this.props.numero)
     const {navigation} = this.props;
     return (
-      <View style={styles.container}>
+      <View style={styles.container}>  
       <SignUpForm registro={this.registroDeUsuario} />
         <Button
           title='SignIn' 
@@ -25,14 +26,14 @@ class SignUp extends Component {
 
 const mapStateToProps = state => {
   return {
-    numero: state.reducerPrueba   
+    user: state.reducerPrueba   
   }
 } 
 
 const mapDispatchToProps = dispatch =>{
   return {
     registry: (values)=>{
-      dispatch({type:'REGISTRY',datos:values})  
+      dispatch(actionRegistro(values))  
     }
   }
 }

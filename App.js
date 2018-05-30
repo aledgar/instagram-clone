@@ -4,6 +4,7 @@ import {RutasNoAutenticadas} from './Componentes/NoAutenticados/RutasNoAutentica
 import {RutasAutenticadas} from './Componentes/Autenticados/RutasAutenticadas';
 import {Provider} from 'react-redux';
 import Store from './Store/Store'; 
+import Seleccion from './Seleccion';
 
 export default class App extends React.Component {
 
@@ -19,12 +20,13 @@ export default class App extends React.Component {
       <View style={styles.container}>      
         {/* <Text>Hola...</Text> */}
         <Provider store={Store}>             
-          <RutasNoAutenticadas/>
-        </Provider>          
+          {/* <RutasNoAutenticadas/> */} 
+          <Seleccion/>   
+        </Provider>           
         {/* <RutasAutenticadas/>*/} 
       </View> 
-    );         
-  }   
+    );               
+  }    
 }  
 
 const styles = StyleSheet.create({  
